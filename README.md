@@ -1,4 +1,4 @@
 haxe-gloebit
 ============
 
-Haxe library to ease access to Gloebit's API
+Haxe class for accessing Gloebit's API
