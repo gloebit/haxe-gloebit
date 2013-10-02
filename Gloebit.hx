@@ -525,7 +525,8 @@ class Gloebit {
       auth_url.protocol = 'https';
       auth_url.host = api_hostname;
       auth_url.path = '/';
-      auth_url.set_query_args (['return-to'=>js.Browser.window.location.href]);
+      auth_url.set_query_args (['return-to'=>js.Browser.window.location.href,
+                                'r'=>consumer_key]);
       trace (auth_url.unparse ());
       js.Browser.window.location.href = auth_url.unparse ();
   }
