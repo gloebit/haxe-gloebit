@@ -42,7 +42,7 @@ class Gloebit {
   static function main ()
   {
     var ctx = new haxe.remoting.Context ();
-    var gbit = new Gloebit ('api0.gloebit.com');
+    var gbit = new Gloebit ('api.gloebit.com');
     gbit.consumer_key = 'test-consumer';
     gbit.consumer_secret = 's3cr3t';
     gbit.consumer_user_name = 'test-consumer@gloebit.com';
@@ -99,7 +99,18 @@ class Gloebit {
         'grant_type'=>'authorization_code',
         'redirect_uri'=>consumer_redirect_uri,
         'state'=>'1']);
+
+    /*
+    Sys.stderr ().writeString ('exchanging tokens...\n');
+    Sys.stderr ().flush ();
+    */
+
     var result = haxe.Http.requestUrl (access_token_url.unparse ());
+
+
+    Sys.stderr ().writeString ('result=' + result + '\n');
+    Sys.stderr ().flush ();
+
     return result;
   }
 
@@ -389,8 +400,13 @@ class Gloebit {
     if (user_id != null)
       return user_id;
     var result_json = do_backend_call ("get_user_information", []);
+
+    trace ('get_user_id result: ' + result_json);
+
     var result : GloebitUserData = haxe.Json.parse (result_json);
-    return result.id;
+    if (result != null)
+      return result.id;
+    return null;
   }
 
 

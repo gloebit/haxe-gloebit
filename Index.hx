@@ -146,7 +146,7 @@ class Index {
   static function main () {
     trace("asynchronous version");
 
-    var gbit = new Gloebit ('api0.gloebit.com');
+    var gbit = new Gloebit ('api.gloebit.com');
     gbit.consumer_key = 'test-consumer';
 
     gbit.get_user_id_async
@@ -166,7 +166,7 @@ class Index {
 
   static function main () {
     trace("synchronous version");
-    var gbit = new Gloebit ('api0.gloebit.com');
+    var gbit = new Gloebit ('api.gloebit.com');
     gbit.consumer_key = 'test-consumer';
 
     var user_id = gbit.get_user_id ();
