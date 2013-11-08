@@ -42,7 +42,7 @@ class Gloebit {
   static function main ()
   {
     var ctx = new haxe.remoting.Context ();
-    var gbit = new Gloebit ('api.gloebit.com');
+    var gbit = new Gloebit ('www.gloebit.com');
     gbit.consumer_key = 'test-consumer';
     gbit.consumer_secret = 's3cr3t';
     gbit.consumer_user_name = 'test-consumer@gloebit.com';
