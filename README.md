@@ -1,4 +1,4 @@
 haxe-gloebit
 ============
 
-Haxe class for accessing Gloebit's API
+[Haxe](http://haxe.org/) class for accessing Gloebit's API
